@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const MAX_SPEED = 400.0
 const SPEED_ACCELERATION = 30.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -800.0
 const MAX_FALLING_SPEED = 800.0
 
 var enable_double_jump = true
@@ -12,7 +12,7 @@ var enable_extra_speed = true
 var extra_speed = 50.0
 #var used_double_jump = true
 
-const DASH_DURATION = 5
+const DASH_DURATION = 6
 const DASH_COOLDOWN = 300
 var time_since_last_dash = 300
 var is_dashing = true
