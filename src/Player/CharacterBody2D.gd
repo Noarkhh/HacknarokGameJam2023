@@ -74,5 +74,5 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED_ACCELERATION)  # from, to, speed
 		
 	time_since_last_dash += 1
-	print(velocity)
+#	print(velocity)
 	move_and_slide()
