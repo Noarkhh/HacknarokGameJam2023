@@ -25,7 +25,7 @@ var track_player = false
 func _ready():
 	rng.randomize()
 	position = $InitialPosition.position
-	activate(move_speed)
+#	activate(move_speed)
 	
 func activate(speed: int):
 	destination_position = $DefaultPosition.position
@@ -41,7 +41,7 @@ func _physics_process(delta):
 #		start_attack()
 	if not moving and not active:
 		position = $InitialPosition.position
-	if track_player and not moving:
+	if track_player:
 		destination_position.y = get_parent().get_node("Player").position.y
 		moving = true
 	go_to_destination(delta)

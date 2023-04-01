@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3rft78mkq660"]
+[gd_scene load_steps=4 format=3 uid="uid://cnr0wu836cvpw"]
 
-[ext_resource type="PackedScene" uid="uid://cabc1068kin2m" path="res://segment_obstacles.tscn" id="1_a2yya"]
+[ext_resource type="PackedScene" uid="uid://fxjhkpwta5y6" path="res://segment_obstacles.tscn" id="1_a2yya"]
 [ext_resource type="PackedScene" path="res://obstacle_stand.tscn" id="2_bxsc8"]
-[ext_resource type="PackedScene" uid="uid://d12l65yfylav8" path="res://obstacle_barrel.tscn" id="3_weriq"]
+[ext_resource type="PackedScene" path="res://obstacle_barrel.tscn" id="3_weriq"]
 
 [node name="SegmentMarket" instance=ExtResource("1_a2yya")]
 
