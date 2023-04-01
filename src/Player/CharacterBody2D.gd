@@ -41,7 +41,7 @@ func _physics_process(delta):
 	if is_dashing:
 		velocity.x += dash_velocity
 		time_since_last_dash += 1
-    
+	
 		move_and_slide()
 		if time_since_last_dash > DASH_DURATION:
 			is_dashing = false
@@ -79,6 +79,7 @@ func _physics_process(delta):
 			$CollisionShape2D.apply_scale(COLLISION_RUN_TO_SLIDE)
 			# TODO ANIMACJA 
 			is_sliding = true
+#			return
 		elif not Input.get_action_strength("key_s") and is_sliding:
 			print("STOPPED SLIDING")
 			$CollisionShape2D.apply_scale(COLLISION_SLIDE_TO_RUN)
@@ -87,13 +88,13 @@ func _physics_process(delta):
 		
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not is_sliding:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("key_a", "key_d")
-	if direction:
+	if direction and not is_sliding:
 		if Input.get_action_strength("key_shift") and time_since_last_dash > DASH_COOLDOWN:
 			time_since_last_dash = 1
 			is_dashing = true
@@ -108,7 +109,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED_ACCELERATION)  # from, to, speed
 		
-#	time_since_last_dash += 1
+	time_since_last_dash += 1
 
 #	print(velocity)
 	move_and_slide()
