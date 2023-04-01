@@ -1,6 +1,10 @@
 extends Timer
 
-var segments_scenes = [preload("res://segment_barrel_stack.tscn"), preload("res://segment_market.tscn")]
+var starting_segment_scene = preload("res://segment_obstacles.tscn")
+var segments_scenes = [
+	preload("res://segment_barrel_stack.tscn"), 
+	preload("res://segment_market.tscn")
+	]
 
 var segment_queue = []
 
@@ -12,11 +16,22 @@ func _ready():
 	wait_time = 1270.0 / segment_speed
 	timeout.connect(on_timer_timeout)
 	
+	var starting_segment = starting_segment_scene.instantiate()
+	starting_segment.init(segment_speed, 640)
+	get_parent().add_child.call_deferred(starting_segment)
+	get_parent().move_child.call_deferred(starting_segment, 2)
+
+	starting_segment = starting_segment_scene.instantiate()
+	starting_segment.init(segment_speed, 1920)
+	get_parent().add_child.call_deferred(starting_segment)
+	get_parent().move_child.call_deferred(starting_segment, 2)
 
 func on_timer_timeout() -> void:
+	print("generating")
 	var new_obstacles_segment = segments_scenes[randi() % segments_scenes.size()].instantiate()
-	new_obstacles_segment.set_speed(segment_speed)
+	new_obstacles_segment.init(segment_speed, 1920)
 	get_parent().add_child(new_obstacles_segment)
+	get_parent().move_child(new_obstacles_segment, 2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

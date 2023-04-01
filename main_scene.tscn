@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://deleuw7scj0tg" path="res://Background.png" id="1_yvgyu"]
 [ext_resource type="PackedScene" uid="uid://c3ywqasnt5osa" path="res://src/Player/Player.tscn" id="2_27tub"]
 [ext_resource type="PackedScene" uid="uid://bc8f76w6nme4d" path="res://danger_scheduler.tscn" id="3_oo2km"]
+[ext_resource type="PackedScene" uid="uid://fxjhkpwta5y6" path="res://segment_obstacles.tscn" id="4_v85ar"]
+
 [ext_resource type="PackedScene" uid="uid://b0okavcmqim7e" path="res://dragons/laser_dragon.tscn" id="4_mpgmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mddp"]
@@ -10,16 +12,23 @@ size = Vector2(1280, 160)
 
 [node name="MainScene" type="StaticBody2D"]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(640, 640)
+shape = SubResource("RectangleShape2D_1mddp")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(640, 360)
 texture = ExtResource("1_yvgyu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(640, 640)
-shape = SubResource("RectangleShape2D_1mddp")
+[node name="SegmentObstacles" parent="." instance=ExtResource("4_v85ar")]
+position = Vector2(1920, 560)
+
+[node name="SegmentObstacles2" parent="." instance=ExtResource("4_v85ar")]
+position = Vector2(640, 560)
 
 [node name="Player" parent="." instance=ExtResource("2_27tub")]
+
 position = Vector2(446, 290)
 
 [node name="DangerScheduler" parent="." instance=ExtResource("3_oo2km")]
