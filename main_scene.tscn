@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b04gcujmvf2fx"]
+[gd_scene load_steps=6 format=3 uid="uid://b04gcujmvf2fx"]
 
 [ext_resource type="Texture2D" uid="uid://deleuw7scj0tg" path="res://Background.png" id="1_yvgyu"]
 [ext_resource type="PackedScene" uid="uid://c3ywqasnt5osa" path="res://src/Player/Player.tscn" id="2_27tub"]
 [ext_resource type="PackedScene" uid="uid://bc8f76w6nme4d" path="res://danger_scheduler.tscn" id="3_oo2km"]
+[ext_resource type="PackedScene" uid="uid://b0okavcmqim7e" path="res://dragons/laser_dragon.tscn" id="4_mpgmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mddp"]
 size = Vector2(1280, 160)
@@ -18,7 +19,9 @@ texture = ExtResource("1_yvgyu")
 position = Vector2(640, 640)
 shape = SubResource("RectangleShape2D_1mddp")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_27tub")]
+[node name="Player" parent="." instance=ExtResource("2_27tub")]
 position = Vector2(446, 290)
 
 [node name="DangerScheduler" parent="." instance=ExtResource("3_oo2km")]
+
+[node name="laser_dragon" parent="." instance=ExtResource("4_mpgmk")]
