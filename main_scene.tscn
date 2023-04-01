@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bc8f76w6nme4d" path="res://danger_scheduler.tscn" id="3_oo2km"]
 [ext_resource type="PackedScene" uid="uid://fxjhkpwta5y6" path="res://segment_obstacles.tscn" id="4_v85ar"]
 
+[ext_resource type="PackedScene" uid="uid://b0okavcmqim7e" path="res://dragons/laser_dragon.tscn" id="4_mpgmk"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mddp"]
 size = Vector2(1280, 160)
 
@@ -26,6 +28,9 @@ position = Vector2(1920, 560)
 position = Vector2(640, 560)
 
 [node name="Player" parent="." instance=ExtResource("2_27tub")]
-position = Vector2(165, 514)
+
+position = Vector2(446, 290)
 
 [node name="DangerScheduler" parent="." instance=ExtResource("3_oo2km")]
+
+[node name="laser_dragon" parent="." instance=ExtResource("4_mpgmk")]

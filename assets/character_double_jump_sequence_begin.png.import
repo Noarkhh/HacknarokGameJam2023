@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dityncy2soyx"
-
-path="res://.godot/imported/character_jump_landing.png-1485f8d4ff59fe1596cdc84e96057daf.ctex"
+uid="uid://bymbhbpnrguxc"
+path="res://.godot/imported/character_double_jump_sequence_begin.png-29c769e6e32e66c9a8ea3c43850743c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_jump_landing.png"
-dest_files=["res://.godot/imported/character_jump_landing.png-1485f8d4ff59fe1596cdc84e96057daf.ctex"]
+source_file="res://assets/character_double_jump_sequence_begin.png"
+dest_files=["res://.godot/imported/character_double_jump_sequence_begin.png-29c769e6e32e66c9a8ea3c43850743c5.ctex"]
 
 [params]
 

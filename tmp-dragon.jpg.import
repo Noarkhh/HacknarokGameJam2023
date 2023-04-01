@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dityncy2soyx"
-
-path="res://.godot/imported/character_jump_landing.png-1485f8d4ff59fe1596cdc84e96057daf.ctex"
+uid="uid://dun6xigiv6ylq"
+path="res://.godot/imported/tmp-dragon.jpg-ae0d62f25b15ffbe74ff091102c69831.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_jump_landing.png"
-dest_files=["res://.godot/imported/character_jump_landing.png-1485f8d4ff59fe1596cdc84e96057daf.ctex"]
+source_file="res://tmp-dragon.jpg"
+dest_files=["res://.godot/imported/tmp-dragon.jpg-ae0d62f25b15ffbe74ff091102c69831.ctex"]
 
 [params]
 
