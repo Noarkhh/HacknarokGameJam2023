@@ -24,11 +24,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #func _input(event):
 #	print(event.as_text()) 
 
+func _ready():
+	$Player.play()
+
 func _physics_process(delta):
 	if is_dashing:
 		velocity.x += dash_velocity
 		time_since_last_dash += 1
-		move_and_slide()		
+		move_and_slide()
 		if time_since_last_dash > DASH_DURATION:
 			is_dashing = false
 			velocity.x = MAX_SPEED
@@ -74,5 +77,5 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED_ACCELERATION)  # from, to, speed
 		
 	time_since_last_dash += 1
-	print(velocity)
+#	print(velocity)
 	move_and_slide()

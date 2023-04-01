@@ -4,10 +4,12 @@ var speed = 500.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position = Vector2(2000, 720 - 160)
+#	position = Vector2(1920, 720 - 160)
+	pass
 
-func set_speed(new_speed: float) -> void:
+func init(new_speed: float, position_x: float) -> void:
 	speed = new_speed
+	position = Vector2(position_x, 720 - 160)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

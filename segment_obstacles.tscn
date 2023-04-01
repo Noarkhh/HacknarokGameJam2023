@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cabc1068kin2m"]
+[gd_scene load_steps=3 format=3 uid="uid://fxjhkpwta5y6"]
 
 [ext_resource type="Script" path="res://SegmentObstacles.gd" id="1_afymc"]
-[ext_resource type="PackedScene" uid="uid://b6x5lq0sueqr8" path="res://obstacle_wall_segment.tscn" id="2_auuh3"]
+[ext_resource type="PackedScene" path="res://obstacle_wall_segment.tscn" id="2_auuh3"]
 
 [node name="SegmentObstacles" type="Node2D"]
 script = ExtResource("1_afymc")
