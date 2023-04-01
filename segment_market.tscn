@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://3rft78mkq660"]
+
+[ext_resource type="PackedScene" uid="uid://cabc1068kin2m" path="res://segment_obstacles.tscn" id="1_a2yya"]
+[ext_resource type="PackedScene" path="res://obstacle_stand.tscn" id="2_bxsc8"]
+[ext_resource type="PackedScene" uid="uid://d12l65yfylav8" path="res://obstacle_barrel.tscn" id="3_weriq"]
+
+[node name="SegmentMarket" instance=ExtResource("1_a2yya")]
+
+[node name="ObstacleStand" parent="." index="1" instance=ExtResource("2_bxsc8")]
+position = Vector2(-218, 7)
+
+[node name="ObstacleStand2" parent="." index="2" instance=ExtResource("2_bxsc8")]
+position = Vector2(-35, 12)
+
+[node name="ObstacleStand3" parent="." index="3" instance=ExtResource("2_bxsc8")]
+position = Vector2(311, 13)
+
+[node name="ObstacleBarrel" parent="." index="4" instance=ExtResource("3_weriq")]
+position = Vector2(121, 0)
