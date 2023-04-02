@@ -35,4 +35,3 @@ position = Vector2(446, 290)
 [node name="fireball_dragon" parent="." instance=ExtResource("8_vodc4")]
 
 [node name="stone_dragon" parent="." instance=ExtResource("6_b2pdn")]
-visible = false
