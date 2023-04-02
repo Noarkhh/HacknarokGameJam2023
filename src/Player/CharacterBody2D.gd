@@ -27,6 +27,7 @@ var is_sliding = false
 var dash_velocity = 0
 var last_anim = ""
 var is_rolling = false
+var is_alive = true
 
 var health = 3.0
 var is_invincible = false
@@ -42,7 +43,10 @@ func _ready():
 	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
-	
+	if not is_alive:
+		pass
+		
+		
 	if is_dashing:
 		velocity.x += dash_velocity
 		time_since_last_dash += 1
@@ -150,6 +154,7 @@ func _animation_finished():
 	elif last_anim == "landing":
 		$AnimatedSprite2D.animation = "run"
 		$AnimatedSprite2D.play()
+
 
 func player_hit(impact: float) -> void:
 	if is_invincible:

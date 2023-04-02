@@ -5,7 +5,9 @@ var segments_scenes = [
 	preload("res://obstacles/segments/segment_barrel_stack.tscn"),
 	preload("res://obstacles/segments/segment_crate_stack.tscn"),
 	preload("res://obstacles/segments/segment_market.tscn"),
-	preload("res://obstacles/segments/segment_scaffolding_triangle.tscn")
+	preload("res://obstacles/segments/segment_scaffolding_triangle.tscn"),
+	preload("res://obstacles/segments/segment_barrel_on_crate.tscn"),
+	preload("res://obstacles/segments/segment_crate_trap.tscn"),
 	]
 	
 var dragons = []
