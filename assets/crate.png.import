@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beqitl2udybbu"
-
-path="res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"
+uid="uid://dqcfx6s8gsynf"
+path="res://.godot/imported/crate.png-b083c7143ec8103676df154d007e744f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shroom3.png"
-dest_files=["res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"]
+source_file="res://assets/crate.png"
+dest_files=["res://.godot/imported/crate.png-b083c7143ec8103676df154d007e744f.ctex"]
 
 [params]
 

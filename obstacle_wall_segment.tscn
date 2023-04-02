@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpfhj1tfn4vom"]
+[gd_scene load_steps=4 format=3 uid="uid://cpqrc5nxh0asq"]
 
 [ext_resource type="PackedScene" path="res://obstacle.tscn" id="1_3k1te"]
-[ext_resource type="Texture2D" uid="uid://bnl253t4a23ln" path="res://DummyWallSegment.png" id="2_4kbdv"]
+[ext_resource type="Texture2D" uid="uid://dai27fgeqj01c" path="res://DummyWallSegment.png" id="2_4kbdv"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpe0g"]
 size = Vector2(1280, 200)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c48d4fa3w56gh"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://fxjhkpwta5y6" path="res://segment_obstacles.tscn" id="1_cjga8"]
-[ext_resource type="PackedScene" path="res://obstacle_barrel.tscn" id="2_og3vb"]
+[ext_resource type="PackedScene" uid="uid://chium38o11sts" path="res://obstacles/segments/segment_obstacles.tscn" id="1_cjga8"]
+[ext_resource type="PackedScene" uid="uid://db3j857223h4s" path="res://obstacle_barrel.tscn" id="2_og3vb"]
 
 [node name="SegmentBarrelStack" instance=ExtResource("1_cjga8")]
 

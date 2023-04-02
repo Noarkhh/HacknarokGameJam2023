@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beqitl2udybbu"
-
-path="res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"
+uid="uid://byldgq8fqlcfn"
+path="res://.godot/imported/health_bar_behind.png-f23547fb508de91bbd0b780856cb15e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shroom3.png"
-dest_files=["res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"]
+source_file="res://assets/health_bar_behind.png"
+dest_files=["res://.godot/imported/health_bar_behind.png-f23547fb508de91bbd0b780856cb15e1.ctex"]
 
 [params]
 

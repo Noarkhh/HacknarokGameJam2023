@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg4y1afdm2nuq"]
+
+[ext_resource type="PackedScene" uid="uid://dfn1idoddv7um" path="res://obstacles/segments/segment_obstacles.tscn" id="1_serfk"]
+[ext_resource type="PackedScene" uid="uid://b4x7i0m28nkh6" path="res://obstacles/obstacle_crate.tscn" id="2_j8equ"]
+
+[node name="SegmentCrateStack" instance=ExtResource("1_serfk")]
+
+[node name="ObstacleCrate2" parent="." index="0" instance=ExtResource("2_j8equ")]
+position = Vector2(-67, -1)
+
+[node name="ObstacleCrate" parent="." index="1" instance=ExtResource("2_j8equ")]
+position = Vector2(49, 3)
+
+[node name="ObstacleCrate3" parent="." index="2" instance=ExtResource("2_j8equ")]
+position = Vector2(-10, -115)
+
+[node name="ObstacleCrate4" parent="." index="3" instance=ExtResource("2_j8equ")]
+position = Vector2(-8, -229)
