@@ -1,10 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://dt0g404mxjjs3"]
+[gd_scene load_steps=9 format=3 uid="uid://dt0g404mxjjs3"]
 
-[ext_resource type="Texture2D" path="res://tmp-dragon.jpg" id="1_3agds"]
 [ext_resource type="Script" path="res://dragons/fireball_dragon.gd" id="1_lp6iw"]
+[ext_resource type="Texture2D" uid="uid://cfqf5tcxadymu" path="res://assets/red_dragon_flight_cycle_.png" id="2_k1bx8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlir0"]
+atlas = ExtResource("2_k1bx8")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foju3"]
+atlas = ExtResource("2_k1bx8")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhyq1"]
+atlas = ExtResource("2_k1bx8")
+region = Rect2(240, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4c0t"]
+atlas = ExtResource("2_k1bx8")
+region = Rect2(360, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu2gf"]
+atlas = ExtResource("2_k1bx8")
+region = Rect2(480, 0, 120, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abxuk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlir0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foju3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhyq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4c0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu2gf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="fireball_dragon" type="CharacterBody2D"]
 script = ExtResource("1_lp6iw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_abxuk")
+frame_progress = 0.320838
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3)
@@ -13,10 +62,6 @@ disabled = true
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_3agds")
-
 [node name="InitialPosition" type="Marker2D" parent="."]
 position = Vector2(-100, 200)
 
@@ -24,7 +69,7 @@ position = Vector2(-100, 200)
 position = Vector2(100, 300)
 
 [node name="FireballAttackPosition" type="Marker2D" parent="."]
-position = Vector2(100, 50)
+position = Vector2(120, 120)
 
 [node name="ExitPosition" type="Marker2D" parent="."]
 position = Vector2(1400, 100)
