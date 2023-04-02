@@ -1,7 +1,133 @@
-[gd_scene load_steps=3 format=3 uid="uid://b54oe2oana7m7"]
+[gd_scene load_steps=21 format=3 uid="uid://b54oe2oana7m7"]
 
 [ext_resource type="Script" path="res://dragons/stone_dragon.gd" id="1_ptykq"]
-[ext_resource type="Texture2D" uid="uid://dun6xigiv6ylq" path="res://tmp-dragon.jpg" id="2_vs6pj"]
+[ext_resource type="Texture2D" uid="uid://k583m0y0jkfl" path="res://assets/stone_dragon_attack.png" id="2_ndxih"]
+[ext_resource type="Texture2D" uid="uid://y436ynti2i87" path="res://assets/stone_dragon_flight.png" id="3_h4lqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxvv5"]
+atlas = ExtResource("2_ndxih")
+region = Rect2(0, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pdhx"]
+atlas = ExtResource("2_ndxih")
+region = Rect2(140, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_747vk"]
+atlas = ExtResource("2_ndxih")
+region = Rect2(280, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3in7"]
+atlas = ExtResource("2_ndxih")
+region = Rect2(420, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1806o"]
+atlas = ExtResource("2_ndxih")
+region = Rect2(560, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmld0"]
+atlas = ExtResource("2_ndxih")
+region = Rect2(700, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2duih"]
+atlas = ExtResource("2_ndxih")
+region = Rect2(840, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4pgj"]
+atlas = ExtResource("2_ndxih")
+region = Rect2(980, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wpus"]
+atlas = ExtResource("3_h4lqn")
+region = Rect2(0, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2oc6"]
+atlas = ExtResource("3_h4lqn")
+region = Rect2(140, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8crcu"]
+atlas = ExtResource("3_h4lqn")
+region = Rect2(280, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ft28"]
+atlas = ExtResource("3_h4lqn")
+region = Rect2(420, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op144"]
+atlas = ExtResource("3_h4lqn")
+region = Rect2(560, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgst0"]
+atlas = ExtResource("3_h4lqn")
+region = Rect2(700, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg2jj"]
+atlas = ExtResource("3_h4lqn")
+region = Rect2(840, 0, 140, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agbnp"]
+atlas = ExtResource("3_h4lqn")
+region = Rect2(980, 0, 140, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4bpi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxvv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pdhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_747vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3in7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1806o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmld0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2duih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4pgj")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wpus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2oc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8crcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ft28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op144")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgst0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg2jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agbnp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="stone_dragon" type="CharacterBody2D"]
 script = ExtResource("1_ptykq")
@@ -13,18 +139,20 @@ disabled = true
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_vs6pj")
-
 [node name="InitialPosition" type="Marker2D" parent="."]
 position = Vector2(-100, 200)
 
 [node name="DefaultPosition" type="Marker2D" parent="."]
-position = Vector2(100, 400)
+position = Vector2(80, 200)
 
-[node name="FireballAttackPosition" type="Marker2D" parent="."]
-position = Vector2(100, 100)
+[node name="StoneAttackPosition" type="Marker2D" parent="."]
+position = Vector2(300, 40)
 
 [node name="ExitPosition" type="Marker2D" parent="."]
-position = Vector2(1400, 100)
+position = Vector2(1600, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_a4bpi")
+frame_progress = 0.819815

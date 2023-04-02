@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://drnsm8atwvrsa"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cabc1068kin2m" path="res://segment_obstacles.tscn" id="1_cjga8"]
-[ext_resource type="PackedScene" uid="uid://d12l65yfylav8" path="res://obstacle_barrel.tscn" id="2_og3vb"]
+[ext_resource type="PackedScene" uid="uid://chium38o11sts" path="res://obstacles/segments/segment_obstacles.tscn" id="1_cjga8"]
+[ext_resource type="PackedScene" uid="uid://db3j857223h4s" path="res://obstacle_barrel.tscn" id="2_og3vb"]
 
 [node name="SegmentBarrelStack" instance=ExtResource("1_cjga8")]
 
-[node name="ObstacleBarrel" parent="." index="0" instance=ExtResource("2_og3vb")]
+[node name="ObstacleBarrel" parent="." index="1" instance=ExtResource("2_og3vb")]
 position = Vector2(-1, 0)
 
-[node name="ObstacleBarrel2" parent="." index="1" instance=ExtResource("2_og3vb")]
+[node name="ObstacleBarrel2" parent="." index="2" instance=ExtResource("2_og3vb")]
 position = Vector2(52, -159)
 
-[node name="ObstacleBarrel3" parent="." index="2" instance=ExtResource("2_og3vb")]
+[node name="ObstacleBarrel3" parent="." index="3" instance=ExtResource("2_og3vb")]
 position = Vector2(103, 0)

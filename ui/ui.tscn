@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://drtkgj2rkr6kp"]
+
+[ext_resource type="PackedScene" uid="uid://d2s6ixeik8385" path="res://ui/score_label.tscn" id="1_fyo0k"]
+[ext_resource type="Script" path="res://ui/score_label.gd" id="2_un4vc"]
+[ext_resource type="PackedScene" uid="uid://6dbmdew3h0us" path="res://ui/health_bar.tscn" id="3_k05kl"]
+
+[sub_resource type="SystemFont" id="SystemFont_ukel6"]
+fallbacks = Array[Font]([null])
+
+[sub_resource type="Theme" id="Theme_kh820"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 675.0
+offset_right = 44.0
+offset_bottom = 715.0
+
+[node name="ScoreLabel" parent="." instance=ExtResource("1_fyo0k")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_fonts/font = SubResource("SystemFont_ukel6")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("2_un4vc")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_k05kl")]
+layout_mode = 0
+offset_left = 1162.0
+offset_top = 7.0
+offset_right = 1258.0
+offset_bottom = 29.0
+theme = SubResource("Theme_kh820")

@@ -1,30 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpdu4s3kjuxpl"]
 
-[ext_resource type="Texture2D" uid="uid://deleuw7scj0tg" path="res://Background.png" id="1_yvgyu"]
+
+[gd_scene load_steps=9 format=3 uid="uid://b04gcujmvf2fx"]
+
 [ext_resource type="PackedScene" uid="uid://c3ywqasnt5osa" path="res://src/Player/Player.tscn" id="2_27tub"]
-[ext_resource type="PackedScene" path="res://danger_scheduler.tscn" id="3_oo2km"]
+
+[ext_resource type="PackedScene" uid="uid://gvw8kg2bj3s1" path="res://danger_scheduler.tscn" id="3_oo2km"]
 [ext_resource type="PackedScene" uid="uid://b0okavcmqim7e" path="res://dragons/laser_dragon.tscn" id="4_mpgmk"]
-[ext_resource type="PackedScene" path="res://segment_obstacles.tscn" id="4_v85ar"]
+[ext_resource type="PackedScene" uid="uid://cgd0txrrf22r7" path="res://background/background.tscn" id="5_acqpb"]
+[ext_resource type="PackedScene" uid="uid://drtkgj2rkr6kp" path="res://ui/ui.tscn" id="6_8y5vv"]
+[ext_resource type="PackedScene" uid="uid://qion8t3outh6" path="res://background/wall_layer.tscn" id="6_u7adc"]
+[ext_resource type="PackedScene" uid="uid://b54oe2oana7m7" path="res://dragons/stone_dragon.tscn" id="6_b2pdn"]
+[ext_resource type="PackedScene" uid="uid://dt0g404mxjjs3" path="res://dragons/fireball_dragon.tscn" id="8_vodc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mddp"]
 size = Vector2(1280, 160)
 
 [node name="MainScene" type="StaticBody2D"]
 
+[node name="Background" parent="." instance=ExtResource("5_acqpb")]
+
+[node name="WallLayer" parent="." instance=ExtResource("6_u7adc")]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(640, 640)
 shape = SubResource("RectangleShape2D_1mddp")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(640, 360)
-texture = ExtResource("1_yvgyu")
-
-[node name="SegmentObstacles" parent="." instance=ExtResource("4_v85ar")]
-position = Vector2(1920, 560)
-
-[node name="SegmentObstacles2" parent="." instance=ExtResource("4_v85ar")]
-position = Vector2(640, 560)
 
 [node name="Player" parent="." instance=ExtResource("2_27tub")]
 position = Vector2(446, 290)
@@ -32,3 +31,8 @@ position = Vector2(446, 290)
 [node name="DangerScheduler" parent="." instance=ExtResource("3_oo2km")]
 
 [node name="laser_dragon" parent="." instance=ExtResource("4_mpgmk")]
+
+[node name="UI" parent="." instance=ExtResource("6_8y5vv")]
+[node name="fireball_dragon" parent="." instance=ExtResource("8_vodc4")]
+
+[node name="stone_dragon" parent="." instance=ExtResource("6_b2pdn")]

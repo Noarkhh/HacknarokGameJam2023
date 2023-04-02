@@ -18,9 +18,10 @@ var active = false
 
 func _ready():
 	position = $InitialPosition.position
-	activate(move_speed)
-	
-func activate(speed: int):
+	$AnimatedSprite2D.play("default")
+#	activate(move_speed)
+
+func activate(speed):
 	destination_position = $DefaultPosition.position
 	moving = true
 	active = true
@@ -28,10 +29,11 @@ func activate(speed: int):
 
 func _physics_process(delta):
 	go_to_destination(delta)
-	if moving == false and attack_finished == true and attack_started == true:
+	if moving == false and attack_finished and attack_started:
 		attack_started = false
 		attack_finished = false
-#	if moving == false:
+#	if moving == false and not attack_started:
+#		leave()
 #		start_attack()
 	move_and_slide()
 
@@ -49,7 +51,6 @@ func start_attack():
 		print("Cannot attack: dragon is busy")
 		return null
 	attack_started = true
-	print("attack 0")
 	destination_position = $FireballAttackPosition.position
 	moving = true
 	attack_timer = Timer.new()
@@ -87,9 +88,9 @@ func leave():
 
 ######################################################33
 
-func set_move_speed(new_move_speed: int):
+func set_move_speed(new_move_speed):
 	move_speed = new_move_speed
-	
+
 func get_move_speed():
 	return move_speed
 

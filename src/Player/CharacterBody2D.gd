@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const MAX_RIGHT = 1280
+const MAX_LEFT = -35
 
 const MAX_SPEED = 400.0
 const SPEED_ACCELERATION = 30.0
@@ -57,6 +59,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		if enable_double_jump and Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY * 0.85
+
 			enable_double_jump = false
 			if not is_rolling:
 				$CollisionShape2D.apply_scale(COLLISION_RUN_TO_ROLL)
@@ -141,3 +144,7 @@ func _animation_finished():
 	elif last_anim == "landing":
 		$AnimatedSprite2D.animation = "run"
 		$AnimatedSprite2D.play()
+
+	position.x = min(position.x, MAX_RIGHT)
+	if position.x < MAX_LEFT:
+		get_tree().paused = true
