@@ -42,9 +42,9 @@ func _ready():
 	get_parent().get_node("WallLayer").base_speed = base_speed
 	dragons[0].activate(125.0)
 	dragons.append(get_parent().get_node("fireball_dragon"))
-	dragons[1].activate(125.0)
+#	dragons[1].activate(125.0)
 	dragons.append(get_parent().get_node("stone_dragon"))
-	dragons[2].activate(125.0)
+#	dragons[2].activate(125.0)
 
 func next_segment() -> void:
 	var new_obstacles_segment = segments_scenes[randi() % segments_scenes.size()].instantiate()

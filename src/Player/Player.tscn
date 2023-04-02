@@ -1,16 +1,15 @@
 [gd_scene load_steps=84 format=3 uid="uid://c3ywqasnt5osa"]
 
 [ext_resource type="Script" path="res://src/Player/CharacterBody2D.gd" id="1_rjfog"]
-[ext_resource type="Texture2D" uid="uid://dw5cmbo4fwb61" path="res://assets/character_slide_sequence_end.png" id="2_mawlu"]
-[ext_resource type="Texture2D" uid="uid://ltl2h0gjf1gr" path="res://assets/character_run_cycle.png" id="2_v0srd"]
+[ext_resource type="Texture2D" uid="uid://djwvxd58ioch2" path="res://assets/character_slide_sequence_end.png" id="2_mawlu"]
+[ext_resource type="Texture2D" uid="uid://cr2atrvwa2tvw" path="res://assets/character_run_cycle.png" id="2_v0srd"]
 [ext_resource type="Texture2D" uid="uid://bdict254wntu0" path="res://assets/character_double_jump_sequence_spin.png" id="3_fkm0h"]
 [ext_resource type="Texture2D" uid="uid://cpevwrxsxaafo" path="res://assets/character_double_jump_sequence_end.png" id="3_o5eyg"]
-[ext_resource type="Texture2D" uid="uid://dke60fcssgtax" path="res://assets/character_jump_start.png" id="4_71ici"]
-[ext_resource type="Texture2D" uid="uid://cr7qs7ll22wb3" path="res://assets/character_jump_landing.png" id="5_wlnmu"]
-[ext_resource type="Texture2D" uid="uid://ddqlkuyaw8nuu" path="res://assets/character_slide.png" id="7_0gugt"]
-[ext_resource type="Texture2D" uid="uid://qpk1nl7txlb7" path="res://assets/character_slide_sequence_begin.png" id="8_p1vv5"]
+[ext_resource type="Texture2D" uid="uid://cixlwqfxxexvn" path="res://assets/character_jump_start.png" id="4_71ici"]
+[ext_resource type="Texture2D" uid="uid://dityncy2soyx" path="res://assets/character_jump_landing.png" id="5_wlnmu"]
+[ext_resource type="Texture2D" uid="uid://bxmstsrd364ak" path="res://assets/character_slide.png" id="7_0gugt"]
+[ext_resource type="Texture2D" uid="uid://cpmlqf1hhpfus" path="res://assets/character_slide_sequence_begin.png" id="8_p1vv5"]
 [ext_resource type="Texture2D" uid="uid://bymbhbpnrguxc" path="res://assets/character_double_jump_sequence_begin.png" id="9_i14r2"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhyvd"]
 size = Vector2(40, 80)
@@ -68,13 +67,8 @@ atlas = ExtResource("5_wlnmu")
 region = Rect2(32, 0, 16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpp1d"]
-
 atlas = ExtResource("2_v0srd")
 region = Rect2(80, 0, 16, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwclu"]
-atlas = ExtResource("2_v0srd")
-region = Rect2(64, 0, 16, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uevvi"]
 atlas = ExtResource("2_v0srd")
@@ -224,7 +218,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gpp1d")
-
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uevvi")
@@ -605,7 +598,6 @@ animations = [{
 "loop": false,
 "name": &"start_spin",
 "speed": 16.0
-
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -632,4 +624,3 @@ frame = 2
 frame_progress = 1.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_animation_finished"]
-
