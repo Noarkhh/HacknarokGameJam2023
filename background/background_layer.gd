@@ -1,11 +1,14 @@
 extends Node2D
 
-@export var speed = 20.0
+@export var base_speed = 20.0
+var speed
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	speed = base_speed
 
-
+func multiply_base_speed(multiplier: float) -> void:
+	speed = base_speed * multiplier
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Sprite2D.position += Vector2.LEFT * speed * delta

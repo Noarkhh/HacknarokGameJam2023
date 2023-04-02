@@ -9,7 +9,6 @@ size = Vector2(104, 177)
 [node name="ObstacleBarrel2" instance=ExtResource("1_28sam")]
 
 [node name="Sprite2D" parent="." index="0"]
-texture_filter = 1
 position = Vector2(1, -94)
 texture = ExtResource("2_8q15t")
 

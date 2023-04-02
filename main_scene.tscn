@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b04gcujmvf2fx"]
+[gd_scene load_steps=8 format=3 uid="uid://b04gcujmvf2fx"]
 
 [ext_resource type="PackedScene" uid="uid://c3ywqasnt5osa" path="res://src/Player/Player.tscn" id="2_27tub"]
 [ext_resource type="PackedScene" uid="uid://bc8f76w6nme4d" path="res://danger_scheduler.tscn" id="3_oo2km"]
 [ext_resource type="PackedScene" uid="uid://b0okavcmqim7e" path="res://dragons/laser_dragon.tscn" id="4_mpgmk"]
 [ext_resource type="PackedScene" uid="uid://cgd0txrrf22r7" path="res://background/background.tscn" id="5_acqpb"]
+[ext_resource type="PackedScene" uid="uid://drtkgj2rkr6kp" path="res://ui/ui.tscn" id="6_8y5vv"]
 [ext_resource type="PackedScene" uid="uid://qion8t3outh6" path="res://background/wall_layer.tscn" id="6_u7adc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mddp"]
@@ -14,7 +15,6 @@ size = Vector2(1280, 160)
 [node name="Background" parent="." instance=ExtResource("5_acqpb")]
 
 [node name="WallLayer" parent="." instance=ExtResource("6_u7adc")]
-speed = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(640, 640)
@@ -26,3 +26,5 @@ position = Vector2(446, 290)
 [node name="DangerScheduler" parent="." instance=ExtResource("3_oo2km")]
 
 [node name="laser_dragon" parent="." instance=ExtResource("4_mpgmk")]
+
+[node name="UI" parent="." instance=ExtResource("6_8y5vv")]
