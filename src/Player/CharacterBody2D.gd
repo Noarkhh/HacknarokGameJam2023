@@ -155,6 +155,8 @@ func player_hit(impact: float) -> void:
 	if is_invincible:
 		return
 	health -= impact
+	if health <= 0:
+		get_tree().paused = true
 	is_invincible = true
 	var invincibility_timer = Timer.new()
 	invincibility_timer.set_wait_time(2.0)
