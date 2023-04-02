@@ -38,9 +38,13 @@ func _ready():
 	segment_queue.push_back(starting_segment)
 		
 	dragons.append(get_parent().get_node("laser_dragon"))
-	dragons[0].activate(125)
 	
 	get_parent().get_node("WallLayer").base_speed = base_speed
+	dragons[0].activate(125.0)
+	dragons.append(get_parent().get_node("fireball_dragon"))
+	dragons[1].activate(125.0)
+	dragons.append(get_parent().get_node("stone_dragon"))
+	dragons[2].activate(125.0)
 
 func next_segment() -> void:
 	var new_obstacles_segment = segments_scenes[randi() % segments_scenes.size()].instantiate()
@@ -66,6 +70,8 @@ func next_segment() -> void:
 	
 	wait_time = 1275.0 / segment_speed
 	
+	dragons[1].start_attack()
+	dragons[2].start_attack()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

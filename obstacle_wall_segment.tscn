@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" path="res://obstacle.tscn" id="1_3k1te"]
 [ext_resource type="Texture2D" uid="uid://dai27fgeqj01c" path="res://DummyWallSegment.png" id="2_4kbdv"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpe0g"]
 size = Vector2(1280, 200)
 

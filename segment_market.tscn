@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c4kmn1omv70tg" path="res://obstacle_stand.tscn" id="2_bxsc8"]
 [ext_resource type="PackedScene" uid="uid://db3j857223h4s" path="res://obstacle_barrel.tscn" id="3_weriq"]
 
+
 [node name="SegmentMarket" instance=ExtResource("1_a2yya")]
 
 [node name="ObstacleStand" parent="." index="1" instance=ExtResource("2_bxsc8")]

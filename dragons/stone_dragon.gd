@@ -5,7 +5,7 @@ enum State {
 	ATTACK
 }
 
-@export var move_speed = 125
+@export var move_speed = 125.0
 @export var moving = false
 @export var current_state = State.DEFAULT
 
@@ -19,21 +19,22 @@ var stones_to_shot = 3
 
 func _ready():
 	position = $InitialPosition.position
-	activate(move_speed)
+	$AnimatedSprite2D.play("default")
 
 func activate(speed):
 	destination_position = $DefaultPosition.position
 	moving = true
 	active = true
-	move_speed = speed + 75
+	move_speed = speed + 75.0
+	change_state(State.DEFAULT)
 
 func _physics_process(delta):
 	go_to_destination(delta)
 	if moving == false and attack_finished and attack_started:
 		attack_started = false
 		attack_finished = false
-	if moving == false and not attack_started:
-		start_attack()
+#	if moving == false and not attack_started:
+#		leave()
 	if track_player:
 		destination_position.x = get_parent().get_node("Player").position.x
 		moving = true
@@ -66,39 +67,35 @@ func start_attack():
 
 
 func stone_attack():
+	if stones_to_shot == 0:
+		change_state(State.ATTACK)
+	
 	attack_timer = Timer.new()
 	if stones_to_shot == 3:
 		track_player = true
 		stones_to_shot -= 1
-		current_state = State.ATTACK
 		attack_timer.set_wait_time(400 / move_speed)
 		attack_timer.timeout.connect(stone_attack)
-		
 	elif stones_to_shot >= 0:
 		stones_to_shot -= 1
 		print("attack")
-		current_state = State.ATTACK
-		attack_timer = Timer.new()
 		attack_timer.set_wait_time(400 / move_speed)
 		attack_timer.timeout.connect(stone_attack)
-		
 	else:
-		attack_timer = Timer.new()
+		track_player = false
 		attack_timer.set_wait_time(100 / move_speed)
 		attack_timer.timeout.connect(finish_attack)
-		
 		
 	attack_timer.set_one_shot(true)
 	add_child(attack_timer)
 	attack_timer.start()
 
 func finish_attack():
-	track_player = false
 	destination_position = $DefaultPosition.position
 	moving = true
 	attack_finished = true
 	current_state = State.DEFAULT
-	
+
 func calculate_movement_time():
 	var direction = destination_position - position
 	var distance = direction.length()
@@ -108,6 +105,18 @@ func leave():
 	move_speed = 800
 	destination_position = $ExitPosition.position
 	moving = true
+
+
+func change_state(new_state):
+	if current_state == new_state:
+		return null
+	current_state = new_state
+	if current_state == State.DEFAULT:
+		$AnimatedSprite2D.play("default")
+	if current_state == State.ATTACK:
+		$AnimatedSprite2D.play("attack")
+	
+
 
 ######################################################33
 

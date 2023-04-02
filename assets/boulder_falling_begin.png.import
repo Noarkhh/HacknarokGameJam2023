@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beqitl2udybbu"
-
-path="res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"
+uid="uid://d0lo1dkpy7405"
+path="res://.godot/imported/boulder_falling_begin.png-c2ae0b9fe223206f11a458d509a87956.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shroom3.png"
-dest_files=["res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"]
+source_file="res://assets/boulder_falling_begin.png"
+dest_files=["res://.godot/imported/boulder_falling_begin.png-c2ae0b9fe223206f11a458d509a87956.ctex"]
 
 [params]
 

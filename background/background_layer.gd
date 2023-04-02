@@ -14,6 +14,7 @@ func _process(delta):
 	$Sprite2D.position += Vector2.LEFT * speed * delta
 	$Sprite2D2.position += Vector2.LEFT * speed * delta
 	
+
 	if ($Sprite2D.position.x <= -1280):
 		$Sprite2D.position.x = $Sprite2D2.position.x + 1280 * 2 - 1
 	elif ($Sprite2D2.position.x <= -1280):

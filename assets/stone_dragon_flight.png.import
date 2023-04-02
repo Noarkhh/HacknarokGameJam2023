@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beqitl2udybbu"
-
-path="res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"
+uid="uid://y436ynti2i87"
+path="res://.godot/imported/stone_dragon_flight.png-252db2484cf35f095f0457a6ef497043.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shroom3.png"
-dest_files=["res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"]
+source_file="res://assets/stone_dragon_flight.png"
+dest_files=["res://.godot/imported/stone_dragon_flight.png-252db2484cf35f095f0457a6ef497043.ctex"]
 
 [params]
 
