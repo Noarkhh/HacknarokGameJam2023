@@ -10,9 +10,6 @@ const COLLISION_RUN_TO_ROLL = Vector2(1, 0.5)
 const COLLISION_ROLL_TO_RUN = Vector2(1, 2)
 const COLLISION_RUN_TO_SLIDE = Vector2(2, 0.5)
 const COLLISION_SLIDE_TO_RUN = Vector2(0.5, 2)
-const ROLL_DURATION = 20
-var current_roll_time = 0
-var is_rolling = false
 
 var enable_double_jump = true
 
@@ -26,7 +23,8 @@ var time_since_last_dash = 300
 var is_dashing = false
 var is_sliding = false
 var dash_velocity = 0
-
+var last_anim = ""
+var is_rolling = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -34,7 +32,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #	print(event.as_text()) 
 
 func _ready():
-	$Player.play()
+	$AnimatedSprite2D.animation = "run"
+	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
 	
@@ -57,34 +56,35 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		if enable_double_jump and Input.is_action_just_pressed("ui_accept"):
-			velocity.y = JUMP_VELOCITY
+			velocity.y = JUMP_VELOCITY * 0.85
 			enable_double_jump = false
-			$CollisionShape2D.apply_scale(COLLISION_RUN_TO_ROLL)
-			print("STARTED ROLLING")
-			# TODO roll animation
-			
+			if not is_rolling:
+				$CollisionShape2D.apply_scale(COLLISION_RUN_TO_ROLL)
+				print("STARTED ROLLING")
 			is_rolling = true
-			current_roll_time = 0
+			$AnimatedSprite2D.animation = "start_spin"
+			last_anim = "start_spin"
 		else:
 			velocity.y += gravity * delta
-			velocity.y = min(velocity.y, MAX_FALLING_SPEED)
-			current_roll_time += 1
-			if current_roll_time > ROLL_DURATION and is_rolling:
-				print("STOPPED ROLLING")
-				$CollisionShape2D.apply_scale(COLLISION_ROLL_TO_RUN)
-				is_rolling = false
+			velocity.y = min(velocity.y, MAX_FALLING_SPEED) #TODO MNIEJ ELO
+			
 	else:
 		if Input.get_action_strength("key_s") and not is_sliding:
 			print("STARTED SLIDING")
 			$CollisionShape2D.apply_scale(COLLISION_RUN_TO_SLIDE)
-			# TODO ANIMACJA 
+			$AnimatedSprite2D.animation = "start_slide"
 			is_sliding = true
 #			return
 		elif not Input.get_action_strength("key_s") and is_sliding:
 			print("STOPPED SLIDING")
 			$CollisionShape2D.apply_scale(COLLISION_SLIDE_TO_RUN)
 			is_sliding = false
+			$AnimatedSprite2D.animation = "end_slide"
+			last_anim = "end_slide"
 		enable_double_jump = true
+		if last_anim == "":
+			$AnimatedSprite2D.animation = "landing"
+			last_anim = "landing"
 		
 
 	# Handle Jump.
@@ -113,3 +113,31 @@ func _physics_process(delta):
 
 #	print(velocity)
 	move_and_slide()
+
+
+func _animation_finished():
+	if is_sliding:
+		$AnimatedSprite2D.animation = "slide"
+		$AnimatedSprite2D.play()
+	elif last_anim == "end_slide":
+		print("XD")
+		$AnimatedSprite2D.animation = "run"
+		$AnimatedSprite2D.play()
+	elif last_anim == "start_spin":
+		$AnimatedSprite2D.animation = "spin"
+		$AnimatedSprite2D.play()
+		last_anim = "spin"
+	elif last_anim == "spin":
+		$AnimatedSprite2D.animation = "end_spin"
+		$AnimatedSprite2D.play()
+		last_anim = "end_spin"
+	elif last_anim == "end_spin":
+		print("STOPPED ROLLING")
+		is_rolling = false
+		$CollisionShape2D.apply_scale(COLLISION_ROLL_TO_RUN)
+		$AnimatedSprite2D.animation = "run"
+		$AnimatedSprite2D.play()
+		last_anim = ""
+	elif last_anim == "landing":
+		$AnimatedSprite2D.animation = "run"
+		$AnimatedSprite2D.play()
