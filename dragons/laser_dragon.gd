@@ -17,15 +17,13 @@ var destination_position
 var attack_timer = null
 var attack_started = false
 var attack_finished = false
-var rng = RandomNumberGenerator.new()
 var active = false
 
 var track_player = false
 
 func _ready():
-	rng.randomize()
 	position = $InitialPosition.position
-	activate(move_speed)
+#	activate(move_speed)
 	
 func activate(speed: int):
 	destination_position = $DefaultPosition.position
@@ -63,11 +61,9 @@ func start_attack():
 	attack_started = true
 	track_player = true
 	
-#	var random_y_position = rng.randf_range(LASER_UPPER_BOUNDRY, LASER_LOWER_BOUNDRY)
-#	destination_position.y = random_y_position
 	moving = true
 	attack_timer = Timer.new()
-	attack_timer.set_wait_time(5)
+	attack_timer.set_wait_time(600 / move_speed)
 	attack_timer.set_one_shot(true)
 	attack_timer.timeout.connect(laser_attack)
 	add_child(attack_timer)
