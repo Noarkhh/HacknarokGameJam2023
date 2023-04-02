@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw5cmbo4fwb61"
-path="res://.godot/imported/character_slide_sequence_end.png-33a7ca1165d90b7555aeb2c83fb81ecf.ctex"
+uid="uid://djut85vatedyb"
+path="res://.godot/imported/you_died.png-5f8b5c92545abce5b3729ea027c3073d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_slide_sequence_end.png"
-dest_files=["res://.godot/imported/character_slide_sequence_end.png-33a7ca1165d90b7555aeb2c83fb81ecf.ctex"]
+source_file="res://assets/you_died.png"
+dest_files=["res://.godot/imported/you_died.png-5f8b5c92545abce5b3729ea027c3073d.ctex"]
 
 [params]
 

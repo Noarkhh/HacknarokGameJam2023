@@ -79,6 +79,11 @@ func stone_attack():
 	elif stones_to_shot >= 0:
 		stones_to_shot -= 1
 		print("attack")
+		var stone = preload("res://dragons/stone.tscn").instantiate()
+		stone.position = position + Vector2(0, 100)
+		get_parent().add_child(stone)
+		print(stone.position)
+		
 		attack_timer.set_wait_time(400 / move_speed)
 		attack_timer.timeout.connect(stone_attack)
 	else:
