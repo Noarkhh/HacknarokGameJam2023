@@ -1,9 +1,11 @@
 extends Timer
 
-var starting_segment_scene = preload("res://segment_obstacles.tscn")
+var starting_segment_scene = preload("res://obstacles/segments/segment_obstacles.tscn")
 var segments_scenes = [
-	preload("res://segment_barrel_stack.tscn"), 
-	preload("res://segment_market.tscn")
+	preload("res://obstacles/segments/segment_barrel_stack.tscn"),
+	preload("res://obstacles/segments/segment_crate_stack.tscn"),
+	preload("res://obstacles/segments/segment_market.tscn"),
+	preload("res://obstacles/segments/segment_scaffolding_triangle.tscn")
 	]
 	
 var dragons = []

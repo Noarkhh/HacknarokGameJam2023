@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://qion8t3outh6"]
+
+[ext_resource type="PackedScene" uid="uid://bf3v0fo8u2hgm" path="res://background/background_layer.tscn" id="1_flal5"]
+[ext_resource type="Texture2D" uid="uid://bwi026kfch70a" path="res://assets/wall.png" id="2_n7hxh"]
+
+[node name="WallLayer" instance=ExtResource("1_flal5")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-1280, 360)
+texture = ExtResource("2_n7hxh")
+
+[node name="Sprite2D2" parent="." index="1"]
+position = Vector2(1280, 360)
+texture = ExtResource("2_n7hxh")

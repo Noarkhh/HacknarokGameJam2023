@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://b04gcujmvf2fx"]
 
-[ext_resource type="Texture2D" uid="uid://deleuw7scj0tg" path="res://Background.png" id="1_yvgyu"]
 [ext_resource type="PackedScene" uid="uid://c3ywqasnt5osa" path="res://src/Player/Player.tscn" id="2_27tub"]
 [ext_resource type="PackedScene" uid="uid://bc8f76w6nme4d" path="res://danger_scheduler.tscn" id="3_oo2km"]
 [ext_resource type="PackedScene" uid="uid://b0okavcmqim7e" path="res://dragons/laser_dragon.tscn" id="4_mpgmk"]
 [ext_resource type="PackedScene" uid="uid://cgd0txrrf22r7" path="res://background/background.tscn" id="5_acqpb"]
+[ext_resource type="PackedScene" uid="uid://qion8t3outh6" path="res://background/wall_layer.tscn" id="6_u7adc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mddp"]
 size = Vector2(1280, 160)
@@ -13,15 +13,12 @@ size = Vector2(1280, 160)
 
 [node name="Background" parent="." instance=ExtResource("5_acqpb")]
 
+[node name="WallLayer" parent="." instance=ExtResource("6_u7adc")]
+speed = 500.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(640, 640)
 shape = SubResource("RectangleShape2D_1mddp")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(640, 360)
-texture = ExtResource("1_yvgyu")
 
 [node name="Player" parent="." instance=ExtResource("2_27tub")]
 position = Vector2(446, 290)

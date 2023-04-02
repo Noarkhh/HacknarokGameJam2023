@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwi026kfch70a"
-path="res://.godot/imported/wall.png-6b1d64fa3ea5498e75707962a9c3b56c.ctex"
+uid="uid://beqitl2udybbu"
+path="res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wall.png"
-dest_files=["res://.godot/imported/wall.png-6b1d64fa3ea5498e75707962a9c3b56c.ctex"]
+source_file="res://assets/shroom3.png"
+dest_files=["res://.godot/imported/shroom3.png-9a07953fa47ff0eb2928a50db135f7fc.ctex"]
 
 [params]
 

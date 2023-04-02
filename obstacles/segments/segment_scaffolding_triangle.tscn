@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://crug8u75nhu80"]
+
+[ext_resource type="PackedScene" uid="uid://dfn1idoddv7um" path="res://obstacles/segments/segment_obstacles.tscn" id="1_mxfn7"]
+[ext_resource type="PackedScene" uid="uid://dwo3hlmto1vis" path="res://obstacles/obstacle_scaffolding.tscn" id="2_m7jxl"]
+[ext_resource type="PackedScene" uid="uid://b14ocn7wd7dtl" path="res://obstacles/obstacle_barrel.tscn" id="3_yqjby"]
+[ext_resource type="PackedScene" uid="uid://b4x7i0m28nkh6" path="res://obstacles/obstacle_crate.tscn" id="4_gicit"]
+
+[node name="SegmentScaffoldingTriangle" instance=ExtResource("1_mxfn7")]
+
+[node name="ObstacleScaffolding" parent="." index="0" instance=ExtResource("2_m7jxl")]
+position = Vector2(-32, -94)
+
+[node name="ObstacleScaffolding2" parent="." index="1" instance=ExtResource("2_m7jxl")]
+position = Vector2(124, -94)
+
+[node name="ObstacleScaffolding6" parent="." index="2" instance=ExtResource("2_m7jxl")]
+position = Vector2(-32, -398)
+
+[node name="ObstacleScaffolding4" parent="." index="3" instance=ExtResource("2_m7jxl")]
+position = Vector2(-32, -246)
+
+[node name="ObstacleScaffolding5" parent="." index="4" instance=ExtResource("2_m7jxl")]
+position = Vector2(124, -246)
+
+[node name="ObstacleScaffolding3" parent="." index="5" instance=ExtResource("2_m7jxl")]
+position = Vector2(280, -94)
+
+[node name="ObstacleBarrel" parent="." index="6" instance=ExtResource("3_yqjby")]
+position = Vector2(346, -218)
+
+[node name="ObstacleBarrel2" parent="." index="7" instance=ExtResource("3_yqjby")]
+position = Vector2(290, -220)
+
+[node name="ObstacleBarrel3" parent="." index="8" instance=ExtResource("3_yqjby")]
+position = Vector2(324, -284)
+
+[node name="ObstacleBarrel4" parent="." index="9" instance=ExtResource("3_yqjby")]
+position = Vector2(236, -219)
+
+[node name="ObstacleBarrel5" parent="." index="10" instance=ExtResource("3_yqjby")]
+position = Vector2(263, -284)
+
+[node name="ObstacleCrate" parent="." index="11" instance=ExtResource("4_gicit")]
+position = Vector2(147, -336)
+
+[node name="ObstacleCrate3" parent="." index="12" instance=ExtResource("4_gicit")]
+position = Vector2(-59, -484)
+
+[node name="ObstacleCrate2" parent="." index="13" instance=ExtResource("4_gicit")]
+position = Vector2(55, -484)

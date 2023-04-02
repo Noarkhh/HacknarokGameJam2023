@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpmkp2y7n3dl5"]
+
+[ext_resource type="PackedScene" uid="uid://dfn1idoddv7um" path="res://obstacles/segments/segment_obstacles.tscn" id="1_5a1oe"]
+[ext_resource type="PackedScene" uid="uid://b14ocn7wd7dtl" path="res://obstacles/obstacle_barrel.tscn" id="2_mk7d4"]
+
+[node name="SegmentBarrelStack" instance=ExtResource("1_5a1oe")]
+
+[node name="ObstacleBarrel4" parent="." index="0" instance=ExtResource("2_mk7d4")]
+position = Vector2(0, -38)
+
+[node name="ObstacleBarrel5" parent="." index="1" instance=ExtResource("2_mk7d4")]
+position = Vector2(-53, -42)
+
+[node name="ObstacleBarrel6" parent="." index="2" instance=ExtResource("2_mk7d4")]
+position = Vector2(53, -40)
+
+[node name="ObstacleBarrel3" parent="." index="3" instance=ExtResource("2_mk7d4")]
+position = Vector2(-28, -106)
+
+[node name="ObstacleBarrel2" parent="." index="4" instance=ExtResource("2_mk7d4")]
+position = Vector2(28, -103)
+
+[node name="ObstacleBarrel" parent="." index="5" instance=ExtResource("2_mk7d4")]
+position = Vector2(3, -164)

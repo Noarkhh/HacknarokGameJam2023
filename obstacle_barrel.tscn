@@ -1,19 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://d12l65yfylav8"]
+[gd_scene load_steps=4 format=3 uid="uid://db3j857223h4s"]
 
-[ext_resource type="PackedScene" uid="uid://b8epl7rxi4siy" path="res://obstacle.tscn" id="1_3iip5"]
-[ext_resource type="Texture2D" uid="uid://5a3g78xuovgh" path="res://DummyBarrel.png" id="2_8q15t"]
+[ext_resource type="PackedScene" uid="uid://dv1dendcsmok5" path="res://obstacles/obstacle.tscn" id="1_28sam"]
+[ext_resource type="Texture2D" uid="uid://0bdyrd1fp7dq" path="res://DummyBarrel.png" id="2_8q15t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwse8"]
 size = Vector2(104, 177)
 
-[node name="ObstacleBarrel" instance=ExtResource("1_3iip5")]
+[node name="ObstacleBarrel2" instance=ExtResource("1_28sam")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
 texture_filter = 1
 position = Vector2(1, -94)
-scale = Vector2(4, 4)
 texture = ExtResource("2_8q15t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(1, -88.5)
 shape = SubResource("RectangleShape2D_gwse8")
