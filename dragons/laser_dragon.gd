@@ -17,8 +17,12 @@ var attack_timer = null
 var attack_started = false
 var attack_finished = false
 var active = false
+var is_firing = false
 
 var track_player = false
+
+var laser_scene = preload("res://dragons/laser.tscn")
+var laser
 
 func _ready():
 	position = $InitialPosition.position
@@ -66,14 +70,17 @@ func start_attack():
 	
 	moving = true
 	attack_timer = Timer.new()
-	attack_timer.set_wait_time(600 / move_speed)
+	attack_timer.set_wait_time(400 / move_speed)
 	attack_timer.set_one_shot(true)
 	attack_timer.timeout.connect(laser_attack)
 	add_child(attack_timer)
 	attack_timer.start()
 
 func laser_attack():
-	print("attack")
+	print("laser attack")
+	
+	is_firing = true
+	
 	moving = false
 	track_player = false
 	attack_timer = Timer.new()
@@ -84,9 +91,12 @@ func laser_attack():
 	attack_timer.start()
 
 func finish_attack():
+	print("aaa")
+	laser.queue_free()
 	destination_position = $DefaultPosition.position
 	moving = true
 	attack_finished = true
+	is_firing = false
 	change_state(State.DEFAULT)
 	
 func calculate_movement_time():
@@ -118,6 +128,7 @@ func _on_animation_finished():
 		change_state(State.ATTACK)
 	elif current_state == State.END_ATTACK:
 		change_state(State.DEFAULT)
+
 	
 ######################################################33
 
@@ -128,3 +139,12 @@ func get_move_speed():
 	return move_speed
 
 
+
+
+func _on_animation_looped():
+	if is_firing:
+		laser = laser_scene.instantiate()
+		laser.position = position + Vector2(1075, 0)
+		get_parent().add_child(laser)
+		get_parent().move_child(laser, 2)
+		is_firing = false

@@ -21,6 +21,8 @@ var speed_multiplier = log(n) / log(7)
 
 var segment_speed = speed_multiplier * base_speed
 
+var curr_dragon = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_autostart(true)
@@ -39,14 +41,15 @@ func _ready():
 	get_parent().move_child.call_deferred(starting_segment, 2)
 	segment_queue.push_back(starting_segment)
 		
-	dragons.append(get_parent().get_node("laser_dragon"))
 	
 	get_parent().get_node("WallLayer").base_speed = base_speed
-	dragons[0].activate(125.0)
+	
+
+	dragons.append(get_parent().get_node("laser_dragon"))
 	dragons.append(get_parent().get_node("fireball_dragon"))
-	dragons[1].activate(125.0)
 	dragons.append(get_parent().get_node("stone_dragon"))
-	dragons[2].activate(125.0)
+	
+	dragons[curr_dragon].activate(125.0)
 
 func next_segment() -> void:
 	var new_obstacles_segment = segments_scenes[randi() % segments_scenes.size()].instantiate()
@@ -54,8 +57,7 @@ func next_segment() -> void:
 	get_parent().add_child(new_obstacles_segment)
 	get_parent().move_child(new_obstacles_segment, 2)
 	segment_queue.push_back(new_obstacles_segment)
-		
-	dragons[0].start_attack()
+	
 	
 	n += 1
 	speed_multiplier = log(n) / log(7)
@@ -72,8 +74,13 @@ func next_segment() -> void:
 	
 	wait_time = 1275.0 / segment_speed
 	
-	dragons[1].start_attack()
-	dragons[2].start_attack()
+	if (randi() % 10 == 0):
+		dragons[curr_dragon].leave()
+		curr_dragon = (curr_dragon + 1) % 3
+		dragons[curr_dragon].activate(125.0 * speed_multiplier)
+		
+	if (randi() % 3 == 0):
+		dragons[curr_dragon].start_attack()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

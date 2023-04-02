@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://bl3ke7fpleyp0"]
+
+[ext_resource type="Script" path="res://dragons/fireball.gd" id="1_4ccul"]
+[ext_resource type="Texture2D" uid="uid://d30ikbe4lis2p" path="res://assets/fireball.png" id="1_7isww"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcmkv"]
+atlas = ExtResource("1_7isww")
+region = Rect2(0, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njpyo"]
+atlas = ExtResource("1_7isww")
+region = Rect2(19, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6sfg"]
+atlas = ExtResource("1_7isww")
+region = Rect2(38, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_372l3"]
+atlas = ExtResource("1_7isww")
+region = Rect2(57, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uga0u"]
+atlas = ExtResource("1_7isww")
+region = Rect2(76, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3fsn"]
+atlas = ExtResource("1_7isww")
+region = Rect2(95, 0, 19, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeqtr"]
+atlas = ExtResource("1_7isww")
+region = Rect2(114, 0, 19, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3p26w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcmkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njpyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6sfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_372l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uga0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3fsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeqtr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6stc"]
+size = Vector2(44, 44)
+
+[node name="Fireball" type="Area2D"]
+script = ExtResource("1_4ccul")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_3p26w")
+frame_progress = 0.558254
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_m6stc")
+
+[connection signal="body_entered" from="." to="." method="_on_player_hit"]
