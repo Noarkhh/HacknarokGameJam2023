@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dt0g404mxjjs3"]
 
-[ext_resource type="Texture2D" uid="uid://dun6xigiv6ylq" path="res://tmp-dragon.jpg" id="1_3agds"]
+[ext_resource type="Texture2D" path="res://tmp-dragon.jpg" id="1_3agds"]
 [ext_resource type="Script" path="res://dragons/fireball_dragon.gd" id="1_lp6iw"]
 
 [node name="fireball_dragon" type="CharacterBody2D"]
@@ -21,10 +21,10 @@ texture = ExtResource("1_3agds")
 position = Vector2(-100, 200)
 
 [node name="DefaultPosition" type="Marker2D" parent="."]
-position = Vector2(100, 400)
+position = Vector2(100, 300)
 
 [node name="FireballAttackPosition" type="Marker2D" parent="."]
-position = Vector2(100, 100)
+position = Vector2(100, 50)
 
 [node name="ExitPosition" type="Marker2D" parent="."]
 position = Vector2(1400, 100)
