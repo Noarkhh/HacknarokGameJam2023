@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbrxn0d8lfgx2"
-path="res://.godot/imported/shroom2.png-30f3050294ff1cf14d95a809a7395d80.ctex"
+uid="uid://d07rhbbg7d14g"
+path="res://.godot/imported/you_died.png-5f8b5c92545abce5b3729ea027c3073d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shroom2.png"
-dest_files=["res://.godot/imported/shroom2.png-30f3050294ff1cf14d95a809a7395d80.ctex"]
+source_file="res://assets/you_died.png"
+dest_files=["res://.godot/imported/you_died.png-5f8b5c92545abce5b3729ea027c3073d.ctex"]
 
 [params]
 

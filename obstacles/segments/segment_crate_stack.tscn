@@ -13,6 +13,3 @@ position = Vector2(49, 3)
 
 [node name="ObstacleCrate3" parent="." index="2" instance=ExtResource("2_j8equ")]
 position = Vector2(-10, -115)
-
-[node name="ObstacleCrate4" parent="." index="3" instance=ExtResource("2_j8equ")]
-position = Vector2(-8, -229)

@@ -27,6 +27,7 @@ var is_sliding = false
 var dash_velocity = 0
 var last_anim = ""
 var is_rolling = false
+var is_alive = true
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -38,7 +39,10 @@ func _ready():
 	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
-	
+	if not is_alive:
+		pass
+		
+		
 	if is_dashing:
 		velocity.x += dash_velocity
 		time_since_last_dash += 1
@@ -116,7 +120,9 @@ func _physics_process(delta):
 
 #	print(velocity)
 	move_and_slide()
-
+	position.x = min(position.x, MAX_RIGHT)
+	if position.x < MAX_LEFT:
+		get_tree().paused = true
 
 func _animation_finished():
 	if is_sliding:
@@ -145,6 +151,4 @@ func _animation_finished():
 		$AnimatedSprite2D.animation = "run"
 		$AnimatedSprite2D.play()
 
-	position.x = min(position.x, MAX_RIGHT)
-	if position.x < MAX_LEFT:
-		get_tree().paused = true
+

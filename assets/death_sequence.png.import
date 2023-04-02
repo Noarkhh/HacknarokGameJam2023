@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbrxn0d8lfgx2"
-path="res://.godot/imported/shroom2.png-30f3050294ff1cf14d95a809a7395d80.ctex"
+uid="uid://r3u1g6500efr"
+path="res://.godot/imported/death_sequence.png-be2f23bf5f8d365506f809a91fbc336e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shroom2.png"
-dest_files=["res://.godot/imported/shroom2.png-30f3050294ff1cf14d95a809a7395d80.ctex"]
+source_file="res://assets/death_sequence.png"
+dest_files=["res://.godot/imported/death_sequence.png-be2f23bf5f8d365506f809a91fbc336e.ctex"]
 
 [params]
 
