@@ -29,14 +29,17 @@ func _ready():
 	get_parent().move_child.call_deferred(starting_segment, 2)
 	
 	dragons.append(get_parent().get_node("laser_dragon"))
-	dragons[0].activate(125)
+	dragons[0].activate(125.0)
+	dragons.append(get_parent().get_node("fireball_dragon"))
+	dragons[1].activate(125.0)
 
 func next_segment() -> void:
 	var new_obstacles_segment = segments_scenes[randi() % segments_scenes.size()].instantiate()
 	new_obstacles_segment.init(segment_speed, 1920)
 	get_parent().add_child(new_obstacles_segment)
 	get_parent().move_child(new_obstacles_segment, 2)
-	dragons[0].start_attack()
+#	dragons[0].start_attack()
+	dragons[1].start_attack()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -18,9 +18,10 @@ var active = false
 
 func _ready():
 	position = $InitialPosition.position
+	$AnimatedSprite2D.play("default")
 #	activate(move_speed)
-	
-func activate(speed: int):
+
+func activate(speed):
 	destination_position = $DefaultPosition.position
 	moving = true
 	active = true
@@ -87,9 +88,9 @@ func leave():
 
 ######################################################33
 
-func set_move_speed(new_move_speed: int):
+func set_move_speed(new_move_speed):
 	move_speed = new_move_speed
-	
+
 func get_move_speed():
 	return move_speed
 

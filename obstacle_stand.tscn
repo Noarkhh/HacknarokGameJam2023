@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://fjagjqdja6wl"]
 
 [ext_resource type="PackedScene" path="res://obstacle.tscn" id="1_t3e6o"]
 [ext_resource type="Texture2D" uid="uid://dvpptst1ybbx5" path="res://DummyStand.png" id="3_h2lql"]
