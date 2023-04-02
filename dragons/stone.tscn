@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dst2l7vd3us1p"]
+
+[ext_resource type="Texture2D" uid="uid://bory0tc7ixsat" path="res://assets/boulder.png" id="1_14ag1"]
+[ext_resource type="Script" path="res://dragons/stone.gd" id="1_ntma4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o3t8"]
+size = Vector2(100, 64)
+
+[node name="Stone" type="CharacterBody2D"]
+script = ExtResource("1_ntma4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_14ag1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3o3t8")
