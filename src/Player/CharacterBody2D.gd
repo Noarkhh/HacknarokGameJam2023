@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const MAX_RIGHT = 1280
+const MAX_LEFT = -35
 
 const MAX_SPEED = 400.0
 const SPEED_ACCELERATION = 30.0
@@ -56,7 +58,7 @@ func _physics_process(delta):
 		
 	# Add the gravity.
 	if not is_on_floor():
-		if enable_double_jump and Input.is_action_just_pressed("ui_accept"):
+		if enable_double_jump and Input.is_action_just_pressed("ui_accept") and not is_rolling:
 			velocity.y = JUMP_VELOCITY
 			enable_double_jump = false
 			$CollisionShape2D.apply_scale(COLLISION_RUN_TO_ROLL)
@@ -108,7 +110,10 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED_ACCELERATION)  # from, to, speed
 		
-#	time_since_last_dash += 1
+	time_since_last_dash += 1
 
 #	print(velocity)
 	move_and_slide()
+	position.x = min(position.x, MAX_RIGHT)
+	if position.x < MAX_LEFT:
+		get_tree().paused = true

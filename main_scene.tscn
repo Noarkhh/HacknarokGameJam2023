@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b04gcujmvf2fx"]
+[gd_scene load_steps=8 format=3 uid="uid://b04gcujmvf2fx"]
 
 [ext_resource type="Texture2D" uid="uid://deleuw7scj0tg" path="res://Background.png" id="1_yvgyu"]
 [ext_resource type="PackedScene" uid="uid://c3ywqasnt5osa" path="res://src/Player/Player.tscn" id="2_27tub"]
-[ext_resource type="PackedScene" uid="uid://bc8f76w6nme4d" path="res://danger_scheduler.tscn" id="3_oo2km"]
+[ext_resource type="PackedScene" uid="uid://gvw8kg2bj3s1" path="res://danger_scheduler.tscn" id="3_oo2km"]
 [ext_resource type="PackedScene" uid="uid://b0okavcmqim7e" path="res://dragons/laser_dragon.tscn" id="4_mpgmk"]
 [ext_resource type="PackedScene" uid="uid://cgd0txrrf22r7" path="res://background/background.tscn" id="5_acqpb"]
+[ext_resource type="PackedScene" uid="uid://b54oe2oana7m7" path="res://dragons/stone_dragon.tscn" id="6_b2pdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mddp"]
 size = Vector2(1280, 160)
@@ -29,3 +30,5 @@ position = Vector2(446, 290)
 [node name="DangerScheduler" parent="." instance=ExtResource("3_oo2km")]
 
 [node name="laser_dragon" parent="." instance=ExtResource("4_mpgmk")]
+
+[node name="stone_dragon" parent="." instance=ExtResource("6_b2pdn")]

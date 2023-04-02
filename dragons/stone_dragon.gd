@@ -5,7 +5,7 @@ enum State {
 	ATTACK
 }
 
-@export var move_speed = 125
+@export var move_speed = 125.0
 @export var moving = false
 @export var current_state = State.DEFAULT
 
@@ -25,7 +25,7 @@ func activate(speed):
 	destination_position = $DefaultPosition.position
 	moving = true
 	active = true
-	move_speed = speed + 75
+	move_speed = speed + 75.0
 
 func _physics_process(delta):
 	go_to_destination(delta)
@@ -73,20 +73,15 @@ func stone_attack():
 		current_state = State.ATTACK
 		attack_timer.set_wait_time(400 / move_speed)
 		attack_timer.timeout.connect(stone_attack)
-		
 	elif stones_to_shot >= 0:
 		stones_to_shot -= 1
 		print("attack")
 		current_state = State.ATTACK
-		attack_timer = Timer.new()
 		attack_timer.set_wait_time(400 / move_speed)
 		attack_timer.timeout.connect(stone_attack)
-		
 	else:
-		attack_timer = Timer.new()
 		attack_timer.set_wait_time(100 / move_speed)
 		attack_timer.timeout.connect(finish_attack)
-		
 		
 	attack_timer.set_one_shot(true)
 	add_child(attack_timer)
@@ -98,7 +93,7 @@ func finish_attack():
 	moving = true
 	attack_finished = true
 	current_state = State.DEFAULT
-	
+
 func calculate_movement_time():
 	var direction = destination_position - position
 	var distance = direction.length()
