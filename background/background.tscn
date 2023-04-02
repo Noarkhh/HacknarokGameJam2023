@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgd0txrrf22r7"]
+
+[ext_resource type="PackedScene" uid="uid://kos843ev5kfv" path="res://background/sky.tscn" id="1_85b7m"]
+[ext_resource type="PackedScene" uid="uid://b8o77ptxqwy7" path="res://background/mountains_1_layer.tscn" id="1_gmo2i"]
+[ext_resource type="PackedScene" uid="uid://dq73oy7ha1k7y" path="res://background/fog_1_layer.tscn" id="1_v2ebu"]
+[ext_resource type="PackedScene" uid="uid://b573e305hq827" path="res://background/fog_2_layer.tscn" id="3_ac3fu"]
+[ext_resource type="PackedScene" uid="uid://cgnto6t2jfi2w" path="res://background/mountains_2_layer.tscn" id="4_ye5bu"]
+[ext_resource type="PackedScene" uid="uid://p64vlfp0p732" path="res://background/clouds.tscn" id="6_y5fof"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Sky" parent="." instance=ExtResource("1_85b7m")]
+
+[node name="Mountains2Layer" parent="." instance=ExtResource("4_ye5bu")]
+speed = 100.0
+
+[node name="Fog2Layer" parent="." instance=ExtResource("3_ac3fu")]
+speed = 125.0
+
+[node name="Mountains1Layer" parent="." instance=ExtResource("1_gmo2i")]
+speed = 150.0
+
+[node name="Fog1Layer" parent="." instance=ExtResource("1_v2ebu")]
+speed = 200.0
+
+[node name="Clouds" parent="." instance=ExtResource("6_y5fof")]
+speed = 40.0

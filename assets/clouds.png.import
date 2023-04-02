@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v8cuejvk8js2"
-
-path="res://.godot/imported/green_dragon_attack.png-173eefdfececba054b0487c276e62e52.ctex"
+uid="uid://bahnrthpt0x8u"
+path="res://.godot/imported/clouds.png-a944dd817d74fea725de5db08cf2d1fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/green_dragon_attack.png"
-dest_files=["res://.godot/imported/green_dragon_attack.png-173eefdfececba054b0487c276e62e52.ctex"]
+source_file="res://assets/clouds.png"
+dest_files=["res://.godot/imported/clouds.png-a944dd817d74fea725de5db08cf2d1fe.ctex"]
 
 [params]
 
