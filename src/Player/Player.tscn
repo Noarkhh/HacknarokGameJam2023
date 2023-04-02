@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c3ywqasnt5osa"]
 
 [ext_resource type="Script" path="res://src/Player/CharacterBody2D.gd" id="1_rjfog"]
-[ext_resource type="Texture2D" uid="uid://c53x4i5tp15la" path="res://assets/character_run_cycle.png" id="2_v0srd"]
+[ext_resource type="Texture2D" path="res://assets/character_run_cycle.png" id="2_v0srd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhyvd"]
 size = Vector2(40, 80)

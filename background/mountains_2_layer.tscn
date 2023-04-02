@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgnto6t2jfi2w"]
+
+[ext_resource type="PackedScene" uid="uid://bf3v0fo8u2hgm" path="res://background/background_layer.tscn" id="1_3rsfw"]
+[ext_resource type="Texture2D" uid="uid://egck0l1uwt1l" path="res://assets/mountains2.png" id="2_qpmdm"]
+
+[node name="Mountains2Layer" instance=ExtResource("1_3rsfw")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_qpmdm")
+
+[node name="Sprite2D2" parent="." index="1"]
+texture = ExtResource("2_qpmdm")
