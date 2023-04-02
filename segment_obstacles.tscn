@@ -1,9 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://fxjhkpwta5y6"]
 
 [ext_resource type="Script" path="res://SegmentObstacles.gd" id="1_afymc"]
-[ext_resource type="PackedScene" path="res://obstacle_wall_segment.tscn" id="2_auuh3"]
+[ext_resource type="Texture2D" uid="uid://bwi026kfch70a" path="res://assets/wall.png" id="2_bbqw4"]
 
 [node name="SegmentObstacles" type="Node2D"]
 script = ExtResource("1_afymc")
 
-[node name="ObstacleWallSegment" parent="." instance=ExtResource("2_auuh3")]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -136)
+scale = Vector2(4, 4)
+texture = ExtResource("2_bbqw4")

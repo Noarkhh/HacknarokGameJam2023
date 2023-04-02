@@ -39,7 +39,7 @@ func _physics_process(delta):
 #		start_attack()
 	if not moving and not active:
 		position = $InitialPosition.position
-	if track_player and not moving:
+	if track_player:
 		destination_position.y = get_parent().get_node("Player").position.y
 		moving = true
 	go_to_destination(delta)
