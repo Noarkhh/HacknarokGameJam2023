@@ -27,6 +27,10 @@ var is_sliding = false
 var dash_velocity = 0
 var last_anim = ""
 var is_rolling = false
+
+var health = 3.0
+var is_invincible = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -116,7 +120,9 @@ func _physics_process(delta):
 
 #	print(velocity)
 	move_and_slide()
-
+	position.x = min(position.x, MAX_RIGHT)
+	if position.x < MAX_LEFT:
+		get_tree().paused = true
 
 func _animation_finished():
 	if is_sliding:
@@ -145,6 +151,19 @@ func _animation_finished():
 		$AnimatedSprite2D.animation = "run"
 		$AnimatedSprite2D.play()
 
-	position.x = min(position.x, MAX_RIGHT)
-	if position.x < MAX_LEFT:
-		get_tree().paused = true
+func player_hit(impact: float) -> void:
+	if is_invincible:
+		return
+	health -= impact
+	is_invincible = true
+	var invincibility_timer = Timer.new()
+	invincibility_timer.set_wait_time(2.0)
+	invincibility_timer.set_one_shot(true)
+	invincibility_timer.timeout.connect(end_invincibility)
+	add_child(invincibility_timer)
+	invincibility_timer.start()
+	get_parent().get_node("UI/HealthBar").health_update(health)
+	
+func end_invincibility():
+	print("ending invincibility")
+	is_invincible = false

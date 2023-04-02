@@ -1,7 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://b04gcujmvf2fx"]
 
 [ext_resource type="PackedScene" uid="uid://c3ywqasnt5osa" path="res://src/Player/Player.tscn" id="2_27tub"]
-[ext_resource type="PackedScene" uid="uid://gvw8kg2bj3s1" path="res://danger_scheduler.tscn" id="3_oo2km"]
+[ext_resource type="PackedScene" uid="uid://bc8f76w6nme4d" path="res://danger_scheduler.tscn" id="3_oo2km"]
+
 [ext_resource type="PackedScene" uid="uid://b0okavcmqim7e" path="res://dragons/laser_dragon.tscn" id="4_mpgmk"]
 [ext_resource type="PackedScene" uid="uid://cgd0txrrf22r7" path="res://background/background.tscn" id="5_acqpb"]
 [ext_resource type="PackedScene" uid="uid://drtkgj2rkr6kp" path="res://ui/ui.tscn" id="6_8y5vv"]

@@ -10,6 +10,8 @@ enum State {
 @export var current_state = State.DEFAULT
 @export var fireball_attack_time = 2.0
 
+var fireball_scene = preload("res://dragons/fireball.tscn")
+
 var destination_position
 var attack_timer = null
 var attack_started = false
@@ -61,7 +63,15 @@ func start_attack():
 	attack_timer.start()
 
 func fireball_attack():
-	print("attack")
+	print("fireball attack")
+	for v in [300, 500, 700, 900, 1100]:
+		var fireball = fireball_scene.instantiate()
+		fireball.init(v)
+		fireball.position = position + Vector2(150, -50)
+		print(fireball.global_position)
+		get_parent().add_child(fireball)
+		get_parent().move_child(fireball, 4)
+		
 	current_state = State.ATTACK
 	attack_timer = Timer.new()
 	attack_timer.set_wait_time(fireball_attack_time)
