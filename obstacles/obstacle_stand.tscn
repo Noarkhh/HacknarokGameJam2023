@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3rqqtbk16aey" path="res://assets/stand.png" id="2_4oign"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv05o"]
-size = Vector2(101, 15)
+size = Vector2(106, 22)
 
 [node name="ObstacleStand" instance=ExtResource("1_5uct4")]
 
@@ -13,5 +13,5 @@ position = Vector2(0, -52)
 texture = ExtResource("2_4oign")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(2.5, -75.5)
+position = Vector2(2, -72)
 shape = SubResource("RectangleShape2D_uv05o")

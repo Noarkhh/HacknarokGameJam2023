@@ -9,25 +9,28 @@
 [node name="SegmentMarket" instance=ExtResource("1_4uyd3")]
 
 [node name="ObstacleBarrel" parent="." index="0" instance=ExtResource("2_k3gig")]
-position = Vector2(489, -39)
+z_index = 3
+position = Vector2(-113, -196)
 
 [node name="ObstacleCrate" parent="." index="1" instance=ExtResource("3_1ets3")]
-position = Vector2(401, 11)
+position = Vector2(401, 8)
 
 [node name="ObstacleBarrel3" parent="." index="2" instance=ExtResource("2_k3gig")]
-position = Vector2(489, -103)
+z_index = 1
+position = Vector2(-83, -127)
 
 [node name="ObstacleBarrel2" parent="." index="3" instance=ExtResource("2_k3gig")]
-position = Vector2(436, -155)
+z_index = 2
+position = Vector2(-140, -126)
 
 [node name="ObstacleStand" parent="." index="4" instance=ExtResource("4_ho25g")]
-position = Vector2(156, 8)
+position = Vector2(-675, 1)
 
 [node name="ObstacleStand2" parent="." index="5" instance=ExtResource("4_ho25g")]
-position = Vector2(29, -1)
+position = Vector2(9, 4)
 
 [node name="ObstacleStand3" parent="." index="6" instance=ExtResource("4_ho25g")]
-position = Vector2(-98, 6)
+position = Vector2(-112, 5)
 
 [node name="ObstacleScaffolding" parent="." index="7" instance=ExtResource("5_vxxwa")]
 position = Vector2(-279, -94)

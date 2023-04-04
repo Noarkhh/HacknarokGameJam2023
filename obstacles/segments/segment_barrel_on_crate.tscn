@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu00g518yj841"]
+[gd_scene load_steps=4 format=3 uid="uid://byyep6ojjsaj"]
 
 [ext_resource type="PackedScene" uid="uid://dfn1idoddv7um" path="res://obstacles/segments/segment_obstacles.tscn" id="1_pvlnd"]
 [ext_resource type="PackedScene" uid="uid://b4x7i0m28nkh6" path="res://obstacles/obstacle_crate.tscn" id="2_10l44"]

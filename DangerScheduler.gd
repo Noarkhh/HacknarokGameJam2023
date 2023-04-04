@@ -11,16 +11,11 @@ var segments_scenes = [
 	]
 	
 var dragons = []
-
 var segment_queue = []
-
 var base_speed = 500.0
 var n = 7
-
 var speed_multiplier = log(n) / log(7)
-
 var segment_speed = speed_multiplier * base_speed
-
 var curr_dragon = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -57,25 +52,23 @@ func next_segment() -> void:
 	get_parent().add_child(new_obstacles_segment)
 	get_parent().move_child(new_obstacles_segment, 2)
 	segment_queue.push_back(new_obstacles_segment)
-	
-	
+
+
 	n += 1
 	speed_multiplier = log(n) / log(7)
-	
 	segment_queue.pop_front().queue_free()
-	
 	segment_speed = base_speed * speed_multiplier
-	
+#
 	segment_queue[0].set_speed(segment_speed)
 	segment_queue[1].set_speed(segment_speed)
-	
+#
 	get_parent().get_node("Background").multiply_base_speed(speed_multiplier)
 	get_parent().get_node("WallLayer").multiply_base_speed(speed_multiplier)
-	
+
 	wait_time = 1275.0 / segment_speed
 	
 	if (randi() % 10 == 0):
-		dragons[curr_dragon].leave()
+		dragons[curr_dragon].deactivate()
 		curr_dragon = (curr_dragon + 1) % 3
 		dragons[curr_dragon].activate(125.0 * speed_multiplier)
 		

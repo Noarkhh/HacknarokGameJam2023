@@ -1,9 +1,9 @@
-extends CharacterBody2D
+extends RigidBody2D
+
+const OFF_MAP_POSITION = -20
 
 var speed = 800.0
-var height = position.y
-
-# Called when the node enters the scene tree for the first time.
+var last_height = 0
 
 const GRAVITY = 600.0
 
@@ -11,19 +11,14 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	velocity.y += delta * GRAVITY
-
-	var motion = velocity * delta
-	move_and_collide(motion)
 	
-	if position.y < -20:
-		print("jest")
+	if position.x < OFF_MAP_POSITION:
 		queue_free()
-	elif position.y - height < 0.001:
-		print("on ground")
-		position.x -= speed * delta
-
-	height = position.y
 		
+	if position.y - last_height < 0.001:
+		linear_velocity.x = -speed
+	
+	last_height = position.y
+
 func set_speed(new_speed):
 	speed = new_speed

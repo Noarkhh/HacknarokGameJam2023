@@ -6,10 +6,13 @@
 [node name="SegmentCrateStack" instance=ExtResource("1_serfk")]
 
 [node name="ObstacleCrate2" parent="." index="0" instance=ExtResource("2_j8equ")]
-position = Vector2(-67, -1)
+position = Vector2(-68, 3)
 
 [node name="ObstacleCrate" parent="." index="1" instance=ExtResource("2_j8equ")]
 position = Vector2(49, 3)
 
 [node name="ObstacleCrate3" parent="." index="2" instance=ExtResource("2_j8equ")]
-position = Vector2(-10, -115)
+position = Vector2(-68, -117)
+
+[node name="ObstacleCrate4" parent="." index="3" instance=ExtResource("2_j8equ")]
+position = Vector2(49, -117)

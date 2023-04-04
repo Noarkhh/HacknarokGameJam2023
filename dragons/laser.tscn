@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bosm7uopo1ysh"]
+[gd_scene load_steps=31 format=3 uid="uid://l30i5ajqejyj"]
 
 [ext_resource type="Texture2D" uid="uid://cotgtpelq23h" path="res://assets/laser_beam_cycle.png" id="1_is0si"]
 [ext_resource type="Script" path="res://dragons/laser.gd" id="1_jtokj"]
