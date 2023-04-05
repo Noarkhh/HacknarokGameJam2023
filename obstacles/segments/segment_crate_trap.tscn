@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckv8qoejcrxep"]
+[gd_scene load_steps=3 format=3 uid="uid://c6lqm1jtlh8lh"]
 
 [ext_resource type="PackedScene" uid="uid://dfn1idoddv7um" path="res://obstacles/segments/segment_obstacles.tscn" id="1_pdfye"]
 [ext_resource type="PackedScene" uid="uid://b4x7i0m28nkh6" path="res://obstacles/obstacle_crate.tscn" id="2_plcrh"]
@@ -12,4 +12,4 @@ position = Vector2(257, 4)
 position = Vector2(-138, 2)
 
 [node name="ObstacleCrate3" parent="." index="2" instance=ExtResource("2_plcrh")]
-position = Vector2(257, -110)
+position = Vector2(258, -110)

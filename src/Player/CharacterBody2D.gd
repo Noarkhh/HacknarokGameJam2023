@@ -71,7 +71,7 @@ func _physics_process(delta):
 			enable_double_jump = false
 			if not is_rolling:
 				$CollisionShape2D.apply_scale(COLLISION_RUN_TO_ROLL)
-				print("STARTED ROLLING")
+#				print("STARTED ROLLING")
 			is_rolling = true
 			$AnimatedSprite2D.animation = "start_spin"
 			last_anim = "start_spin"
@@ -81,13 +81,13 @@ func _physics_process(delta):
 			
 	else:
 		if Input.get_action_strength("key_s") and not is_sliding:
-			print("STARTED SLIDING")
+#			print("STARTED SLIDING")
 			$CollisionShape2D.apply_scale(COLLISION_RUN_TO_SLIDE)
 			$AnimatedSprite2D.animation = "start_slide"
 			is_sliding = true
 #			return
 		elif not Input.get_action_strength("key_s") and is_sliding:
-			print("STOPPED SLIDING")
+#			print("STOPPED SLIDING")
 			$CollisionShape2D.apply_scale(COLLISION_SLIDE_TO_RUN)
 			is_sliding = false
 			$AnimatedSprite2D.animation = "end_slide"
@@ -133,7 +133,7 @@ func _animation_finished():
 		$AnimatedSprite2D.animation = "slide"
 		$AnimatedSprite2D.play()
 	elif last_anim == "end_slide":
-		print("XD")
+#		print("XD")
 		$AnimatedSprite2D.animation = "run"
 		$AnimatedSprite2D.play()
 	elif last_anim == "start_spin":
@@ -145,7 +145,7 @@ func _animation_finished():
 		$AnimatedSprite2D.play()
 		last_anim = "end_spin"
 	elif last_anim == "end_spin":
-		print("STOPPED ROLLING")
+#		print("STOPPED ROLLING")
 		is_rolling = false
 		$CollisionShape2D.apply_scale(COLLISION_ROLL_TO_RUN)
 		$AnimatedSprite2D.animation = "run"
@@ -154,7 +154,6 @@ func _animation_finished():
 	elif last_anim == "landing":
 		$AnimatedSprite2D.animation = "run"
 		$AnimatedSprite2D.play()
-
 
 func player_hit(impact: float) -> void:
 	if is_invincible:
@@ -172,5 +171,5 @@ func player_hit(impact: float) -> void:
 	get_parent().get_node("UI/HealthBar").health_update(health)
 	
 func end_invincibility():
-	print("ending invincibility")
+#	print("ending invincibility")
 	is_invincible = false

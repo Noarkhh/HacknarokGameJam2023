@@ -25,6 +25,6 @@ func kill():
 
 
 func _on_player_hit(area):
-	print("area_hit")
+#	print("area_hit")
 	if area == get_parent().get_node("Player"):
 		area.player_hit(1.0)

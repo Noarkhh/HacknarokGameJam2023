@@ -32,19 +32,19 @@ position = Vector2(346, -218)
 position = Vector2(290, -220)
 
 [node name="ObstacleBarrel3" parent="." index="8" instance=ExtResource("3_yqjby")]
-position = Vector2(319, -282)
+position = Vector2(324, -284)
 
 [node name="ObstacleBarrel4" parent="." index="9" instance=ExtResource("3_yqjby")]
 position = Vector2(236, -219)
 
 [node name="ObstacleBarrel5" parent="." index="10" instance=ExtResource("3_yqjby")]
-position = Vector2(230, -284)
+position = Vector2(263, -284)
 
 [node name="ObstacleCrate" parent="." index="11" instance=ExtResource("4_gicit")]
-position = Vector2(151, -326)
+position = Vector2(147, -336)
 
 [node name="ObstacleCrate3" parent="." index="12" instance=ExtResource("4_gicit")]
 position = Vector2(-59, -484)
 
 [node name="ObstacleCrate2" parent="." index="13" instance=ExtResource("4_gicit")]
-position = Vector2(49, -478)
+position = Vector2(55, -484)

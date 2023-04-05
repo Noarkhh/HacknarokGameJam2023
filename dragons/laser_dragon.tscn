@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://dragons/laser_dragon.gd" id="1_37bgi"]
 [ext_resource type="Texture2D" uid="uid://d01daw7neyryu" path="res://assets/green_dragon_flifht_cycle.png" id="2_663tr"]
-[ext_resource type="Texture2D" uid="uid://bkhma5i4fe2xh" path="res://assets/green_dragon_attack.png" id="2_w0fp6"]
-[ext_resource type="Texture2D" uid="uid://1sspblr1w87p" path="res://assets/green_dragon_attack_sequence_begin.png" id="3_4octh"]
-[ext_resource type="Texture2D" uid="uid://u3a3q1slm8yi" path="res://assets/green_dragon_attack_end.png" id="4_ffa46"]
+[ext_resource type="Texture2D" uid="uid://drlo2x1q6hli7" path="res://assets/green_dragon_attack.png" id="2_w0fp6"]
+[ext_resource type="Texture2D" uid="uid://dj3bjsd551i66" path="res://assets/green_dragon_attack_sequence_begin.png" id="3_4octh"]
+[ext_resource type="Texture2D" uid="uid://dbkt1jcoxf8ht" path="res://assets/green_dragon_attack_end.png" id="4_ffa46"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu0ha"]
 atlas = ExtResource("2_w0fp6")

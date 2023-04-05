@@ -140,7 +140,7 @@ disabled = true
 wait_time = 5.0
 
 [node name="InitialPosition" type="Marker2D" parent="."]
-position = Vector2(-300, 200)
+position = Vector2(-300, 550)
 
 [node name="DefaultPosition" type="Marker2D" parent="."]
 position = Vector2(80, 200)
