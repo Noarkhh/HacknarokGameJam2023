@@ -10,10 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Hacknarock Game Jam 2023"
-run/main_scene="res://main_scene.tscn"
+config/name="Hacknarok Game Jam 2023"
+run/main_scene="res://core/main_scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 

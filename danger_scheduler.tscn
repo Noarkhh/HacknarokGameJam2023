@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://sxxthl7fu7gi"]
-
-
-[ext_resource type="Script" path="res://DangerScheduler.gd" id="1_bh304"]
-
-[node name="DangerScheduler" type="Timer"]
-script = ExtResource("1_bh304")

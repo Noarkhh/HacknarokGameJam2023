@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dq73oy7ha1k7y"]
 
 [ext_resource type="PackedScene" uid="uid://bf3v0fo8u2hgm" path="res://background/background_layer.tscn" id="1_wg0v8"]
-[ext_resource type="Texture2D" path="res://assets/mist1.png" id="2_nvydu"]
+[ext_resource type="Texture2D" uid="uid://cnpkyuilq22vm" path="res://assets/mist1.png" id="2_nvydu"]
 
 [node name="Fog1Layer" instance=ExtResource("1_wg0v8")]
 

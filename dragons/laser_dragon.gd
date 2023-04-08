@@ -71,7 +71,7 @@ func start_attack():
 	moving = true
 	
 	attack_timer = Timer.new()
-	attack_timer.set_wait_time(400 / move_speed)
+	attack_timer.set_wait_time(1.5)
 	attack_timer.set_one_shot(true)
 	attack_timer.timeout.connect(_laser_attack)
 	add_child(attack_timer)
